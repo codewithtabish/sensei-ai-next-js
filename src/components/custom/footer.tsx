@@ -2,10 +2,11 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis vitae totam ducimus eaque facere blanditiis dignissimos, corrupti architecto? Ipsum id quas assumenda exercitationem non ratione repellat perspiciatis eaque minima voluptatibus!
-      
+    <footer className="bg-muted/50 py-12">
+    <div className="container mx-auto px-4 text-center text-gray-200">
+      <p>Made with 💗 by codewithtabish</p>
     </div>
+  </footer>
   )
 }
 

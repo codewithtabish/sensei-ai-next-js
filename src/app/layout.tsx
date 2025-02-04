@@ -8,6 +8,7 @@ import Header from "@/components/custom/header";
 import Footer from "@/components/custom/footer";
 import { ThemeProvider } from "@/components/custom/theme-provider";
 import { dark } from "@clerk/themes";
+import { Toaster } from "sonner";
 
 
 
@@ -52,9 +53,11 @@ export default function RootLayout({
             disableTransitionOnChange
           >
 
-
+          
               <Header/>
-              <main className="min-h-screen">
+              <main className="min-h-screen md:px-10">
+              <Toaster richColors />
+
         {children}
               </main>
               <Footer/>

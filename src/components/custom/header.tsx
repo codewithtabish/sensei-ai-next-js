@@ -18,12 +18,15 @@ import {
 import Image from "next/image";
 // import { checkUser } from "@/lib/checkUser";
 import { Button } from "../ui/button";
+import { checkUser } from "@/lib/check-user";
 
 export default async function Header() {
-//   await checkUser();
+  await checkUser();
 
   return (
-    <header className="fixed top-0 w-full border-b bg-background/80 backdrop-blur-md z-50 supports-[backdrop-filter]:bg-background/60">
+    <header className="fixed top-0 w-full border-b bg-background/80 backdrop-blur-md z-50 supports-[backdrop-filter]:bg-background/60
+    md:px-10
+    ">
       <nav className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Link href="/">
           <Image
@@ -64,7 +67,7 @@ export default async function Header() {
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" className="w-48">
                 <DropdownMenuItem asChild>
-                  <Link href="/resume" className="flex items-center gap-2">
+                  <Link href="/resume" className="flex items-center gap-2 cursor-pointer">
                     <FileText className="h-4 w-4" />
                     Build Resume
                   </Link>
@@ -72,14 +75,14 @@ export default async function Header() {
                 <DropdownMenuItem asChild>
                   <Link
                     href="/ai-cover-letter"
-                    className="flex items-center gap-2"
+                    className="flex items-center gap-2 cursor-pointer"
                   >
                     <PenBox className="h-4 w-4" />
                     Cover Letter
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link href="/interview" className="flex items-center gap-2">
+                  <Link href="/interview" className="flex items-center gap-2 cursor-pointer">
                     <GraduationCap className="h-4 w-4" />
                     Interview Prep
                   </Link>
