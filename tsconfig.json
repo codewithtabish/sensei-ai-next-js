@@ -20,7 +20,9 @@
     "module": "ESNext",
     "target": "ESNext",
     "baseUrl": ".",
-    "paths": {},
+    "paths": {
+      "@/*": ["src/*"]
+    },
     "outDir": "./dist",
     "rootDir": "./src",
     "removeComments": true,
