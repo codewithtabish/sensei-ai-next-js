@@ -1,7 +1,9 @@
 "use server"
+import { getIndustryInsights } from '@/actions/dashboard';
 import { getUserOnboardingStatus } from '@/actions/users';
 import { redirect } from 'next/navigation';
 import React from 'react'
+import DashboardView from './_components/dashboard-view';
 
 const IndustryInsights =async () => {
     const { isOnBoarded } = await getUserOnboardingStatus();
@@ -11,10 +13,20 @@ const IndustryInsights =async () => {
     if (!isOnBoarded) {
       redirect("/onboarding");
     }
+
+    const insights = await getIndustryInsights();
+
+    
+
+    // console.log('The insights are', JSON.stringify(insights));
+
   
   return (
     <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, doloremque voluptates? Amet eveniet minus eius minima excepturi id sunt, maxime corporis debitis facere accusantium provident officiis saepe adipisci, in autem?
+        {/* {JSON.stringify(insights)} */}
+        <DashboardView insights={insights} />
+
+     
       
     </div>
   )
