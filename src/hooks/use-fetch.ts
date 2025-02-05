@@ -20,9 +20,12 @@ function useFetch<T>(cb: FetchCallback<T>) {
       if (error instanceof Error) {
         setError(error);
         toast.error(error.message);
+        console.log('the error is ',error)
+
       } else {
         setError(new Error("An unknown error occurred"));
         toast.error("An unknown error occurred");
+        console.log('the error is ',error)
       }
     } finally {
       setLoading(false);
